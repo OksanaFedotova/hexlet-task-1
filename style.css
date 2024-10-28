@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 :root {
   --color-primary: #F1CDB3;
@@ -36,9 +36,15 @@ h2 {
   font-size: 44px;
   font-weight: 400;
   line-height: 130%;
-  letter-spacing: 0%;
+  letter-spacing: 2px;
 }
-p {
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+p, a {
   font-family: 'Arial';
   font-style: normal;
   font-weight: 400;
@@ -47,18 +53,11 @@ p {
   color: var(--color-dark-s);
   max-width: 100%;
 }
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
+
 .header {
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  z-index: 1;
   width: 100%;
   padding: 30px 40px;
 }
@@ -98,15 +97,6 @@ a {
   margin-top: 15px;
 }
 
-.menu__item {
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.menu__link {
-  color: var(--color-dark-s);
-}
 
 .menu__link--active::after {
   display: block;
@@ -123,8 +113,9 @@ a {
 .start__content {
   padding: 180px 40px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
 .start__text {
@@ -132,6 +123,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   height: 322px;
+  flex-basis: 460px;
   margin-bottom: 80px;
 }
 
@@ -147,7 +139,7 @@ a {
 
 .button--primary {
   width: 207px;
-  height: 52px;
+  min-height: 52px;
   border: none;
   background: var(--color-primary);
   border-radius: 100px;
@@ -155,11 +147,35 @@ a {
 .button--primary:hover {
   background: #FFFFFF;;
   border: 2px solid var(--color-primary);
-  box-sizing: border-box;
-  border-radius: 100px;
 }
 
 .start__image-container {
   display: flex;
   align-items: flex-end;
+}
+.start__image {
+  max-width: 100%;
+  height: auto;
+}
+.about {
+  padding: 80px 40px 100px;
+}
+.about-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.about-content__text {
+  flex-basis: 380px;
+}
+.about-content__title {
+  color: var(--color-dark-l);
+}
+.about-content__paragraph {
+  color: var(--color-dark-xl);
+}
+@media (max-width: 770px) {
+  .header__menu {
+    display: none;
+  }
 }
